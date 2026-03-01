@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camp EV — Where EVM Teams Come to Unplug</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forest:    #1E3A28;
+      --pine:      #2A4A35;
+      --lake:      #2B5070;
+      --water:     #4A8FA8;
+      --wood:      #8B6347;
+      --bark:      #5C3D20;
+      --gold:      #D4A843;
+      --sunrise:   #E8823A;
+      --cream:     #F5F0E6;
+      --offwhite:  #FAF7F2;
+      --moss:      #5A7A4A;
+      --text-dark: #1C2B1E;
+      --text-mid:  #4A5C45;
+      --text-soft: #7A8A72;
+      --nav-h:     68px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--offwhite);
+      color: var(--text-dark);
+      font-family: 'Cabin', sans-serif;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(30, 58, 40, 0.97);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      z-index: 200;
+      border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    .nav-logo span {
+      color: var(--cream);
+      opacity: 0.6;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(212, 168, 67, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245, 240, 230, 0.6);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); background: rgba(212,168,67,0.08); }
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--forest) !important;
+      font-weight: 700 !important;
+      padding: 9px 20px !important;
+    }
+    .nav-cta:hover { opacity: 0.88; background: var(--gold) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30,58,40,0.15) 0%,
+        rgba(30,58,40,0.05) 40%,
+        rgba(28,43,30,0.75) 75%,
+        rgba(20,30,22,0.92) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 80px 80px;
+      max-width: 780px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,168,67,0.15);
+      border: 1px solid rgba(212,168,67,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge span {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(245,240,230,0.75);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--forest);
+      font-weight: 700;
+    }
+    .btn-primary:hover { background: #e8b94a; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(245,240,230,0.35);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      right: 80px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.5;
+    }
+
+    .hero-scroll span {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--cream);
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--cream), transparent);
+      animation: scrollLine 1.8s infinite;
+    }
+
+    @keyframes scrollLine {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ─── SECTIONS ─── */
+    section { scroll-margin-top: var(--nav-h); }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+
+    .label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 12px;
+    }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      max-width: 620px;
+      margin-bottom: 56px;
+    }
+
+    /* ─── ABOUT STRIP ─── */
+    .about-strip {
+      background: var(--forest);
+      padding: 64px 0;
+    }
+
+    .about-strip .section-inner {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 48px;
+      text-align: center;
+    }
+
+    .stat-block .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-block .stat-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: rgba(245,240,230,0.5);
+      text-transform: uppercase;
+    }
+
+    .stat-block .stat-desc {
+      font-size: 13px;
+      color: rgba(245,240,230,0.65);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* ─── AMENITIES ─── */
+    .amenities { padding: 96px 0; background: var(--offwhite); }
+
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 28px;
+    }
+
+    .amenity-card {
+      background: white;
+      border: 1px solid rgba(90,122,74,0.12);
+      border-radius: 12px;
+      padding: 36px 32px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .amenity-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--forest), var(--moss));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .amenity-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(30,58,40,0.12);
+      border-color: rgba(90,122,74,0.25);
+    }
+
+    .amenity-card:hover::before { opacity: 1; }
+
+    .amenity-icon {
+      font-size: 38px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .amenity-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+
+    .amenity-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .amenity-tag {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(30,58,40,0.06);
+      color: var(--moss);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    /* ─── STAGE ─── */
+    .stage-section {
+      background: var(--forest);
+      padding: 96px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stage-section::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(212,168,67,0.08), transparent 70%);
+    }
+
+    .stage-section .label { color: var(--gold); opacity: 0.8; }
+    .stage-section h2.section-title { color: var(--cream); }
+    .stage-section .section-lead { color: rgba(245,240,230,0.65); }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .stage-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,168,67,0.15);
+      border-radius: 10px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+
+    .stage-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(212,168,67,0.35);
+    }
+
+    .stage-card .icon { font-size: 32px; margin-bottom: 16px; display: block; }
+
+    .stage-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .stage-card p {
+      font-size: 14px;
+      color: rgba(245,240,230,0.6);
+      line-height: 1.7;
+    }
+
+    .stage-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .stage-tag {
+      background: rgba(212,168,67,0.12);
+      border: 1px solid rgba(212,168,67,0.25);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      color: rgba(212,168,67,0.8);
+      letter-spacing: 1px;
+    }
+
+    /* ─── DAY PASS ─── */
+    .daypass-section { padding: 96px 0; background: white; }
+
+    .daypass-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .pass-card {
+      background: var(--forest);
+      border-radius: 16px;
+      padding: 48px 40px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .pass-card .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .pass-card .price-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: rgba(245,240,230,0.45);
+      margin-bottom: 32px;
+      margin-top: 6px;
+    }
+
+    .pass-includes {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .pass-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+      color: rgba(245,240,230,0.8);
+    }
+
+    .pass-includes li:last-child { border-bottom: none; }
+
+    .pass-includes .check {
+      color: var(--gold);
+      font-size: 14px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .pass-btn {
+      width: 100%;
+      display: block;
+      text-align: center;
+      background: var(--gold);
+      color: var(--forest);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      padding: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .pass-btn:hover { opacity: 0.88; }
+
+    .pass-note {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: rgba(245,240,230,0.3);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .daypass-content h2 { margin-bottom: 20px; }
+    .daypass-content .section-lead { margin-bottom: 40px; }
+
+    .perks-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .perk-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(30,58,40,0.08);
+    }
+
+    .perk-row:last-child { border-bottom: none; }
+
+    .perk-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(30,58,40,0.06);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .perk-row h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+
+    .perk-row p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ─── SPONSOR ─── */
+    .sponsor-section {
+      background: linear-gradient(135deg, #0E1F14, #1E3A28);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .sponsor-section .label { color: var(--gold); opacity: 0.7; justify-content: center; display: block; }
+    .sponsor-section h2.section-title { color: var(--cream); margin: 0 auto 16px; }
+    .sponsor-section .section-lead { color: rgba(245,240,230,0.6); margin: 0 auto 48px; text-align: center; }
+
+    .sponsor-tiers {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto 48px;
+    }
+
+    .tier-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,168,67,0.15);
+      border-radius: 10px;
+      padding: 32px 24px;
+      transition: all 0.3s;
+    }
+
+    .tier-card.featured {
+      border-color: var(--gold);
+      background: rgba(212,168,67,0.07);
+    }
+
+    .tier-card:hover { transform: translateY(-4px); }
+
+    .tier-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+
+    .tier-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .tier-price {
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .tier-perks {
+      list-style: none;
+      font-size: 13px;
+      color: rgba(245,240,230,0.6);
+      line-height: 1.9;
+      text-align: left;
+    }
+
+    .tier-perks li::before { content: '— '; opacity: 0.4; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0A120C;
+      padding: 56px 0 32px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(212,168,67,0.1);
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(245,240,230,0.45);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      opacity: 0.7;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(245,240,230,0.45);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(245,240,230,0.2);
+    }
+
+    .evm-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(212,168,67,0.35);
+      border: 1px solid rgba(212,168,67,0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="top-nav">
+    <div class="nav-brand">
+      <div class="nav-logo">Camp EV <span>// EVM RETREAT</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#amenities">The Grounds</a>
+      <a href="#stage">The Stage</a>
+      <a href="#daypass">Day Pass</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#daypass" class="btn-cta nav-cta btn">Get Your Pass — $675</a>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="home" class="hero">
+    <img class="hero-img" src="camp_ev_hero.png" alt="Cabin by the lake at Camp EV" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="dot"></div>
+        <span>Summer 2026 · Registration Open</span>
+      </div>
+      <h1>Where EVM Teams<br />Come to <em>Unplug.</em></h1>
+      <p class="hero-sub">
+        A lakeside retreat for Ethereum Virtual Machine companies. Breathe clean air, build real connections, ship ideas from Adirondack chairs. Healthy detox. Wild side events. One unforgettable stage.
+      </p>
+      <div class="hero-actions">
+        <a href="#daypass" class="btn btn-primary">🎟 Grab a Day Pass — $675</a>
+        <a href="#amenities" class="btn btn-outline">Explore the Grounds ↓</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ─── STATS STRIP ─── -->
+  <div class="about-strip">
+    <div class="section-inner">
+      <div class="stat-block">
+        <div class="number">3</div>
+        <div class="stat-label">Days on the Lake</div>
+        <div class="stat-desc">Full retreat experience — arrive, unwind, go deep.</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">12+</div>
+        <div class="stat-label">EVM Companies</div>
+        <div class="stat-desc">Builder teams, protocols, and infrastructure orgs.</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">$675</div>
+        <div class="stat-label">Day Pass</div>
+        <div class="stat-desc">Access the grounds, stage, and side events for a day.</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">∞</div>
+        <div class="stat-label">Fresh Air</div>
+        <div class="stat-desc">No conference center. No dim rooms. Just the outdoors.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── AMENITIES ─── -->
+  <section id="amenities" class="amenities">
+    <div class="section-inner">
+      <p class="label">// The Grounds</p>
+      <h2 class="section-title">Everything You Didn't Know<br />You Needed at an Offsite</h2>
+      <p class="section-lead">
+        No hotel conference rooms. No sad continental breakfasts. Camp EV is a full lakeside property designed for EVM teams to do their best thinking — and have the most fun — outside.
+      </p>
+
+      <div class="amenity-grid">
+        <div class="amenity-card">
+          <span class="amenity-icon">🏡</span>
+          <h3>Private Cabins</h3>
+          <p>Full-team cabin blocks with fire pits, covered porches, and Wi-Fi strong enough to submit a PR — or ignore one.</p>
+          <span class="amenity-tag">FAMILY FRIENDLY</span>
+        </div>
+        <div class="amenity-card">
+          <span class="amenity-icon">🏊</span>
+          <h3>The Lake</h3>
+          <p>Canoes, kayaks, a floating dock, and the kind of swim that resets your nervous system. Cold plunge available for the masochists.</p>
+          <span class="amenity-tag">OPEN DAILY</span>
+        </div>
+        <div class="amenity-card">
+          <span class="amenity-icon">🍳</span>
+          <h3>Farm-to-Table Kitchen</h3>
+          <p>Three meals a day sourced from local farms. Gluten-free, plant-based, and carnivore options. No mystery buffet trays.</p>
+          <span class="amenity-tag">HEALTHY · DETOX</span>
+        </div>
+        <div class="amenity-card">
+          <span class="amenity-icon">🔥</span>
+          <h3>Campfire Commons</h3>
+          <p>The real deals happen here. Communal fire pit, Adirondack chairs, and zero agenda. Bring a topic or just bring s'mores.</p>
+          <span class="amenity-tag">NIGHTLY</span>
+        </div>
+        <div class="amenity-card">
+          <span class="amenity-icon">🧘</span>
+          <h3>Morning Wellness</h3>
+          <p>Sunrise yoga, guided breathwork, and optional trail runs. Start every day calibrated before the first commit.</p>
+          <span class="amenity-tag">7AM DAILY</span>
+        </div>
+        <div class="amenity-card">
+          <span class="amenity-icon">🏕️</span>
+          <h3>Town Side Events</h3>
+          <p>The surrounding town comes alive at night. Curated pop-ups, bar takeovers, and local experiences for the adventurous.</p>
+          <span class="amenity-tag">EVENINGS · ALL AGES</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STAGE ─── -->
+  <section id="stage" class="stage-section">
+    <div class="section-inner">
+      <p class="label">// The Stage</p>
+      <h2 class="section-title">A Makeshift Stage.<br />Unmissable Content.</h2>
+      <p class="section-lead">
+        We built a stage by the water. No keynote theater energy — just the best builders in the EVM ecosystem, speaking their minds under open sky.
+      </p>
+
+      <div class="stage-grid">
+        <div class="stage-card">
+          <span class="icon">🎤</span>
+          <h3>Builder Talks</h3>
+          <p>20-minute unfiltered talks from teams shipping on EVM. No pitch decks. No buzzwords. Just what you're actually building and why it matters.</p>
+          <div class="stage-tags">
+            <span class="stage-tag">MAIN STAGE</span>
+            <span class="stage-tag">DAILY</span>
+          </div>
+        </div>
+        <div class="stage-card">
+          <span class="icon">🔴</span>
+          <h3>Live Demos</h3>
+          <p>Ship something at camp and demo it live. Some of the best onchain ideas started as lakeside prototypes. Yours could be next.</p>
+          <div class="stage-tags">
+            <span class="stage-tag">OPEN MIC</span>
+            <span class="stage-tag">EVENING</span>
+          </div>
+        </div>
+        <div class="stage-card">
+          <span class="icon">🌲</span>
+          <h3>Fireside Panels</h3>
+          <p>The real conversations happen around fire. Intimate roundtables on infra, scaling, governance, and the state of EVM — off the record if you want.</p>
+          <div class="stage-tags">
+            <span class="stage-tag">CAMPFIRE</span>
+            <span class="stage-tag">SMALL GROUP</span>
+          </div>
+        </div>
+        <div class="stage-card">
+          <span class="icon">🎸</span>
+          <h3>Night Programming</h3>
+          <p>After the talks, the stage transforms. Live music, DJ sets, and community events that make this feel less like a conference and more like a culture.</p>
+          <div class="stage-tags">
+            <span class="stage-tag">AFTER DARK</span>
+            <span class="stage-tag">TICKETED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DAY PASS ─── -->
+  <section id="daypass" class="daypass-section">
+    <div class="section-inner">
+      <div class="daypass-layout">
+        <div class="daypass-content">
+          <p class="label">// Day Pass</p>
+          <h2 class="section-title">Can't Stay the Week?<br />Come for a Day.</h2>
+          <p class="section-lead">
+            Day passes give you full access to the grounds, the stage, the lake, and the food — from sunrise to midnight. Bring your team or go solo.
+          </p>
+
+          <div class="perks-list">
+            <div class="perk-row">
+              <div class="perk-icon">🎟️</div>
+              <div>
+                <h4>Full Grounds Access</h4>
+                <p>Lake, docks, cabins (common areas), campfire commons, and all stage programming from open to close.</p>
+              </div>
+            </div>
+            <div class="perk-row">
+              <div class="perk-icon">🍽️</div>
+              <div>
+                <h4>All Meals Included</h4>
+                <p>Breakfast, lunch, dinner, and snacks. Farm-sourced, chef-prepared. No coupons, no cash bar — it's all in.</p>
+              </div>
+            </div>
+            <div class="perk-row">
+              <div class="perk-icon">🎤</div>
+              <div>
+                <h4>Stage Access All Day</h4>
+                <p>Full access to builder talks, live demos, fireside panels, and evening programming.</p>
+              </div>
+            </div>
+            <div class="perk-row">
+              <div class="perk-icon">🏙️</div>
+              <div>
+                <h4>Town Side Events</h4>
+                <p>Day pass holders are invited to curated evening experiences in the surrounding town. More details at check-in.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="pass-card">
+            <div class="price">$675</div>
+            <div class="price-label">PER PERSON · DAY PASS</div>
+            <ul class="pass-includes">
+              <li><span class="check">✓</span> Full grounds access (sunrise to midnight)</li>
+              <li><span class="check">✓</span> All meals & snacks</li>
+              <li><span class="check">✓</span> Stage & speaker programming</li>
+              <li><span class="check">✓</span> Lake, dock & water activities</li>
+              <li><span class="check">✓</span> Town side event invitations</li>
+              <li><span class="check">✓</span> Morning wellness sessions</li>
+              <li><span class="check">✓</span> Campfire commons access</li>
+            </ul>
+            <a href="#" class="pass-btn">Secure Your Spot →</a>
+            <p class="pass-note">LIMITED SPOTS · FIRST COME FIRST SERVED</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SPONSORS ─── -->
+  <section id="sponsors" class="sponsor-section">
+    <div class="section-inner">
+      <p class="label">// Partner With Us</p>
+      <h2 class="section-title" style="text-align:center">Be Part of the Retreat</h2>
+      <p class="section-lead" style="max-width:540px">
+        Put your brand in the middle of EVM's most focused, influential builders — in an environment where the conversations actually go somewhere.
+      </p>
+
+      <div class="sponsor-tiers">
+        <div class="tier-card">
+          <span class="tier-icon">🌲</span>
+          <div class="tier-name">Trailblazer</div>
+          <div class="tier-price">On Request</div>
+          <ul class="tier-perks">
+            <li>Logo on event materials</li>
+            <li>2 day passes included</li>
+            <li>Campfire sponsorship</li>
+            <li>Social mentions</li>
+          </ul>
+        </div>
+        <div class="tier-card featured">
+          <span class="tier-icon">🏕️</span>
+          <div class="tier-name">Cabin Sponsor</div>
+          <div class="tier-price">On Request</div>
+          <ul class="tier-perks">
+            <li>Named cabin block</li>
+            <li>5 day passes included</li>
+            <li>Stage speaking slot</li>
+            <li>Branded side event</li>
+            <li>Exclusive dinner session</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <span class="tier-icon">🌅</span>
+          <div class="tier-name">Title Partner</div>
+          <div class="tier-price">On Request</div>
+          <ul class="tier-perks">
+            <li>Top billing in all comms</li>
+            <li>10 day passes included</li>
+            <li>Keynote speaking slot</li>
+            <li>Custom activation area</li>
+            <li>Exclusive dinner session</li>
+            <li>Year-round partnership</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="mailto:hello@campev.xyz" class="btn btn-primary">Get Sponsorship Info →</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">Camp EV</div>
+          <p>A lakeside retreat for EVM teams. Unplug, reconnect, and remember why you're building.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="#amenities">The Grounds</a>
+          <a href="#stage">The Stage</a>
+          <a href="#daypass">Day Pass</a>
+          <a href="#sponsors">Sponsor</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@campev.xyz">hello@campev.xyz</a>
+          <a href="#">Press Kit</a>
+          <a href="#">Sponsor Deck</a>
+          <a href="#">Team Retreats</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 CAMP EV — ALL RIGHTS RESERVED</p>
+        <div class="evm-badge">BUILT FOR THE EVM ECOSYSTEM</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
