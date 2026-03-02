@@ -913,6 +913,18 @@
       .mobile-menu-btn { display: flex; }
     }
 
+    @media (max-width: 768px) {
+      /* Ski hero */
+      #ski div[style*="padding: 0 80px"] { padding: 0 24px 64px !important; }
+      #ski h2[style*="font-size:68px"] { font-size: 40px !important; }
+      /* Ski stats grid */
+      #ski + div div[style*="grid-template-columns:repeat(4"] {
+        grid-template-columns: 1fr 1fr !important;
+        padding: 0 24px !important;
+        gap: 28px !important;
+      }
+    }
+
     @media (max-width: 480px) {
       .hero h1 { font-size: 36px; }
       .about-strip .section-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -932,6 +944,7 @@
       <a href="#amenities" onclick="closeMobileMenu()">The Grounds</a>
       <a href="#stage" onclick="closeMobileMenu()">The Stage</a>
       <a href="#daypass" onclick="closeMobileMenu()">Day Pass</a>
+      <a href="#ski" onclick="closeMobileMenu()">⛷️ Winter 2027</a>
       <a href="#sponsors" onclick="closeMobileMenu()">Sponsors</a>
       <a href="#daypass" class="btn-cta nav-cta btn" onclick="closeMobileMenu()">Join the Waitlist</a>
     </div>
@@ -946,12 +959,13 @@
     <a href="#stage" onclick="closeMobileMenu()">The Stage</a>
     <a href="#daypass" onclick="closeMobileMenu()">Day Pass</a>
     <a href="#sponsors" onclick="closeMobileMenu()">Sponsors</a>
+    <a href="#ski" onclick="closeMobileMenu()">⛷️ Winter 2027</a>
     <a href="#daypass" class="drawer-cta" onclick="closeMobileMenu()">Join the Waitlist →</a>
   </div>
 
   <!-- ─── HERO ─── -->
   <section id="home" class="hero">
-    <img class="hero-img" src="camp_ev_hero.png" alt="Cabin by the lake at Camp EV" />
+    <img class="hero-img" src="camp_ev_hero.png" alt="Cabin by the lake at Camp EV—" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">
@@ -960,7 +974,7 @@
       </div>
       <h1>Where EVM Teams<br />Come to <em>Unplug.</em></h1>
       <p class="hero-sub">
-        The Ethereum ecosystem doesn't slow down — but you should. Camp EV is where the builders, founders, and teams pushing the needle in onchain tech come to reset, reconnect, and come back sharper.
+        The Ethereum ecosystem doesn't slow down — but you should. Camp EV— is where the builders, founders, and teams pushing the needle in onchain tech come to reset, reconnect, and come back sharper.
       </p>
       <div class="hero-actions">
         <a href="#daypass" class="btn btn-primary">🎟 Join the Waitlist</a>
@@ -1005,7 +1019,7 @@
       <p class="label">// The Grounds</p>
       <h2 class="section-title">Everything You Didn't Know<br />You Needed at an Offsite</h2>
       <p class="section-lead">
-        No hotel conference rooms. No sad continental breakfasts. Camp EV is a full lakeside property designed for EVM teams to do their best thinking — and have the most fun — outside.
+        No hotel conference rooms. No sad continental breakfasts. Camp EV— is a full lakeside property designed for EVM teams to do their best thinking — and have the most fun — outside.
       </p>
 
       <div class="amenity-grid">
@@ -1235,12 +1249,154 @@
     </div>
   </section>
 
+  <!-- ─── SKI EVENT DIVIDER ─── -->
+  <div style="background:#0A120C; padding: 80px 0 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 48px; text-align:center; border-top: 1px solid rgba(212,168,67,0.12); padding-top:80px;">
+      <p style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:4px; color:rgba(212,168,67,0.5); text-transform:uppercase; margin-bottom:16px;">// Sister Event</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:14px; color:rgba(245,240,230,0.3); letter-spacing:6px; font-weight:400; text-transform:uppercase;">What Comes After the Lake?</h2>
+    </div>
+  </div>
+
+  <!-- ─── SKI HERO ─── -->
+  <section id="ski" style="position:relative; min-height:90vh; display:flex; align-items:flex-end; overflow:hidden; background:#0A120C;">
+    <img src="camp_ev_ski.png" alt="Camp EV— Winter on the Slopes"
+      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; opacity:0.7;
+             mask-image:linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.97) 100%);
+             -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.97) 100%);" />
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(10,18,30,0.2) 0%, rgba(10,18,30,0.05) 35%, rgba(10,18,30,0.8) 75%, rgba(5,10,20,0.96) 100%);"></div>
+
+    <div style="position:relative; z-index:2; padding: 0 80px 80px; max-width:720px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(160,190,230,0.2); border:1.5px solid rgba(160,200,240,0.7); border-radius:20px; padding:8px 20px; margin-bottom:24px; box-shadow:0 0 20px rgba(120,160,220,0.2);">
+        <div style="width:8px;height:8px;background:#B0CCEE;border-radius:50%;box-shadow:0 0 6px #B0CCEE;"></div>
+        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:2px; color:#C8DEFF; font-weight:700; text-shadow:0 1px 4px rgba(0,0,0,0.5); text-transform:uppercase;">Winter 2027 · Applications Opening Soon</span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:68px; font-weight:900; line-height:1.05; color:#FFFFFF; margin-bottom:20px;
+                 text-shadow: 0 2px 4px rgba(0,0,0,0.7), 0 6px 28px rgba(0,0,0,0.5);">
+        Camp EV—<br /><em style="color:#B0CCEE; font-style:italic;">On the Slopes.</em>
+      </h2>
+      <p style="font-size:19px; color:rgba(255,255,255,0.88); line-height:1.65; max-width:520px; margin-bottom:40px; font-weight:600; text-shadow:0 1px 8px rgba(0,0,0,0.6);">
+        Same builders. Same talks. Same posse. Different mountain. Camp EV— goes alpine for Winter 2027 — a VIP ski retreat where the runs are steep, the lodge is warm, and the ideas hit different at elevation.
+      </p>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="mailto:hello@campev.xyz?subject=Ski Retreat Waitlist" class="btn btn-primary" style="background:linear-gradient(135deg,#5B8FD4,#3A6BB0); color:white;">🎿 Join the Winter Waitlist</a>
+        <a href="#ski-amenities" class="btn btn-outline" style="border-color:rgba(180,210,255,0.35); color:rgba(220,235,255,0.9);">Explore the Mountain ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKI STATS ─── -->
+  <div style="background:#0D1620; padding:56px 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 48px; display:grid; grid-template-columns:repeat(4,1fr); gap:40px; text-align:center;">
+      <div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:#7AAEE8;line-height:1;">4</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(180,210,255,0.45);text-transform:uppercase;margin-top:6px;">Days on the Mountain</div><div style="font-size:13px;color:rgba(180,210,255,0.5);margin-top:8px;line-height:1.6;">Arrive fresh. Leave inspired.</div></div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:#7AAEE8;line-height:1;">VIP</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(180,210,255,0.45);text-transform:uppercase;margin-top:6px;">Access Only</div><div style="font-size:13px;color:rgba(180,210,255,0.5);margin-top:8px;line-height:1.6;">Private runs, private lodge, private stage.</div></div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:#7AAEE8;line-height:1;">10</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(180,210,255,0.45);text-transform:uppercase;margin-top:6px;">Per Company Package</div><div style="font-size:13px;color:rgba(180,210,255,0.5);margin-top:8px;line-height:1.6;">Full team. All inclusive.</div></div>
+      <div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:#7AAEE8;line-height:1;">∞</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(180,210,255,0.45);text-transform:uppercase;margin-top:6px;">Vertical Feet</div><div style="font-size:13px;color:rgba(180,210,255,0.5);margin-top:8px;line-height:1.6;">Go until your legs give out.</div></div>
+    </div>
+  </div>
+
+  <!-- ─── SKI AMENITIES ─── -->
+  <section id="ski-amenities" style="background:#0D1620; padding:80px 0; scroll-margin-top:68px;">
+    <div class="section-inner">
+      <p class="label" style="color:#7AAEE8;">// The Mountain Grounds</p>
+      <h2 class="section-title" style="color:#EAF2FF;">Everything the Slopes Have to Offer.<br/>Then Some.</h2>
+      <p class="section-lead" style="color:rgba(180,210,255,0.6);">Private lodge. World-class runs. VIP lifts. And a makeshift stage by the fireplace where the best talks happen with a bourbon in hand.</p>
+
+      <div class="amenity-grid">
+        <div class="amenity-card" style="background:rgba(20,35,60,0.8); border-color:rgba(100,160,230,0.15);">
+          <span class="amenity-icon">⛷️</span>
+          <h3 style="color:#C8DEFF;">Private Runs & VIP Lifts</h3>
+          <p style="color:rgba(180,210,255,0.65);">Skip the lines. Dedicated lift access and curated runs from groomed groomers to expert powder. All levels welcome — instructors on call.</p>
+          <span class="amenity-tag" style="background:rgba(100,160,230,0.1); color:#7AAEE8;">VIP ACCESS</span>
+          <br/><a href="mailto:hello@campev.xyz?subject=Ski Retreat Pre-Book" class="amenity-inquire" style="background:#1E3A6A; margin-top:16px; display:inline-block;">Pre-Book for Your Company →</a>
+        </div>
+        <div class="amenity-card" style="background:rgba(20,35,60,0.8); border-color:rgba(100,160,230,0.15);">
+          <span class="amenity-icon">🏔️</span>
+          <h3 style="color:#C8DEFF;">Private Lodge</h3>
+          <p style="color:rgba(180,210,255,0.65);">The whole property is yours. Slope-side suites, a great room with floor-to-ceiling mountain views, a hot tub on the deck, and a sauna to decompress after a full day of runs.</p>
+          <span class="amenity-tag" style="background:rgba(100,160,230,0.1); color:#7AAEE8;">FULL BUYOUT</span>
+        </div>
+        <div class="amenity-card" style="background:rgba(20,35,60,0.8); border-color:rgba(100,160,230,0.15);">
+          <span class="amenity-icon">🍷</span>
+          <h3 style="color:#C8DEFF;">Alpine Kitchen & Bar</h3>
+          <p style="color:rgba(180,210,255,0.65);">Chef-prepared mountain cuisine — hearty breakfasts, slope-side lunches, long dinners by the fire. Full bar. Après-ski done properly.</p>
+          <span class="amenity-tag" style="background:rgba(100,160,230,0.1); color:#7AAEE8;">ALL INCLUSIVE</span>
+        </div>
+        <div class="amenity-card" style="background:rgba(20,35,60,0.8); border-color:rgba(100,160,230,0.15);">
+          <span class="amenity-icon">🎸</span>
+          <h3 style="color:#C8DEFF;">The Lodge Stage</h3>
+          <p style="color:rgba(180,210,255,0.65);">Fireplace. Bourbon. Builder talks. The makeshift stage comes inside for winter — intimate, warm, and somehow producing the sharpest conversations of the year.</p>
+          <span class="amenity-tag" style="background:rgba(100,160,230,0.1); color:#7AAEE8;">NIGHTLY</span>
+        </div>
+        <div class="amenity-card" style="background:rgba(20,35,60,0.8); border-color:rgba(100,160,230,0.15);">
+          <span class="amenity-icon">🧖</span>
+          <h3 style="color:#C8DEFF;">Recovery & Wellness</h3>
+          <p style="color:rgba(180,210,255,0.65);">Ice baths, infrared sauna, massage therapy, and morning movement sessions. You're going hard on the mountain — recover like a pro.</p>
+          <span class="amenity-tag" style="background:rgba(100,160,230,0.1); color:#7AAEE8;">DAILY</span>
+        </div>
+        <div class="amenity-card" style="background:rgba(20,35,60,0.8); border-color:rgba(100,160,230,0.15);">
+          <span class="amenity-icon">🏙️</span>
+          <h3 style="color:#C8DEFF;">Village Side Events</h3>
+          <p style="color:rgba(180,210,255,0.65);">The mountain town comes alive at night. Curated bar takeovers, pop-ups, and local experiences for those who still have energy after the slopes.</p>
+          <span class="amenity-tag" style="background:rgba(100,160,230,0.1); color:#7AAEE8;">EVENINGS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKI DAY PASS ─── -->
+  <section style="background:#0A1018; padding:80px 0;">
+    <div class="section-inner">
+      <div class="daypass-layout">
+        <div class="daypass-content">
+          <p class="label" style="color:#7AAEE8;">// Day Pass — Winter Edition</p>
+          <h2 class="section-title" style="color:#EAF2FF;">One Day.<br/>Full Mountain.</h2>
+          <p class="section-lead" style="color:rgba(180,210,255,0.6);">
+            Can't commit to the full week? The winter day pass gives you access to the private runs, lodge, stage programming, meals, and evening events — from first chair to last call.
+          </p>
+          <div class="perks-list">
+            <div class="perk-row" style="border-color:rgba(100,160,230,0.1);">
+              <div class="perk-icon" style="background:rgba(50,100,180,0.1);">⛷️</div>
+              <div><h4 style="color:#C8DEFF;">Full Mountain Access</h4><p style="color:rgba(180,210,255,0.6);">Private runs and VIP lift access all day. No lines, no crowds.</p></div>
+            </div>
+            <div class="perk-row" style="border-color:rgba(100,160,230,0.1);">
+              <div class="perk-icon" style="background:rgba(50,100,180,0.1);">🍽️</div>
+              <div><h4 style="color:#C8DEFF;">All Meals & Après-Ski Bar</h4><p style="color:rgba(180,210,255,0.6);">Breakfast through dinner plus full bar access. Fully included.</p></div>
+            </div>
+            <div class="perk-row" style="border-color:rgba(100,160,230,0.1);">
+              <div class="perk-icon" style="background:rgba(50,100,180,0.1);">🎤</div>
+              <div><h4 style="color:#C8DEFF;">Lodge Stage Access</h4><p style="color:rgba(180,210,255,0.6);">Builder talks, demos, and evening programming at the fireplace stage.</p></div>
+            </div>
+            <div class="perk-row" style="border-color:rgba(100,160,230,0.1);">
+              <div class="perk-icon" style="background:rgba(50,100,180,0.1);">🏙️</div>
+              <div><h4 style="color:#C8DEFF;">Village Side Events</h4><p style="color:rgba(180,210,255,0.6);">Curated evening experiences in the village. Details at check-in.</p></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pass-card" style="background:linear-gradient(160deg,#0D1E3A,#0A1628);">
+            <div class="price" style="font-size:42px; padding-top:8px; color:#7AAEE8;">Join the<br/>Waitlist</div>
+            <div class="price-label" style="color:rgba(180,210,255,0.35);">WINTER DAY PASS · PRICING ON REQUEST</div>
+            <ul class="pass-includes">
+              <li style="border-color:rgba(100,160,230,0.08); color:rgba(200,220,255,0.75);"><span class="check" style="color:#7AAEE8;">✓</span> Full mountain + VIP lift access</li>
+              <li style="border-color:rgba(100,160,230,0.08); color:rgba(200,220,255,0.75);"><span class="check" style="color:#7AAEE8;">✓</span> All meals &amp; après-ski bar</li>
+              <li style="border-color:rgba(100,160,230,0.08); color:rgba(200,220,255,0.75);"><span class="check" style="color:#7AAEE8;">✓</span> Lodge stage &amp; speaker programming</li>
+              <li style="border-color:rgba(100,160,230,0.08); color:rgba(200,220,255,0.75);"><span class="check" style="color:#7AAEE8;">✓</span> Recovery &amp; wellness access</li>
+              <li style="border-color:rgba(100,160,230,0.08); color:rgba(200,220,255,0.75);"><span class="check" style="color:#7AAEE8;">✓</span> Village side event invitations</li>
+            </ul>
+            <a href="mailto:hello@campev.xyz?subject=Winter Day Pass Waitlist" class="pass-btn" style="background:linear-gradient(135deg,#5B8FD4,#3A6BB0);">Join the Winter Waitlist →</a>
+            <p class="pass-note">LIMITED SPOTS · WINTER 2027</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="logo">Camp EV</div>
+          <div class="logo">Camp EV—</div>
           <p>Corporate retreat &amp; rehabilitation by the lake. Unplug, reconnect, and come back sharper.</p>
         </div>
         <div class="footer-col">
