@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1E3A28" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>Camp EV— Where Teams Come to Unplug & Rehabilitate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -776,6 +778,147 @@
       padding: 4px 12px;
       border-radius: 20px;
     }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      :root { --nav-h: 60px; }
+
+      /* Nav */
+      nav { padding: 0 20px; }
+      .nav-logo { font-size: 17px; }
+      .nav-logo span { display: none; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 8px 14px !important; font-size: 10px !important; }
+
+      /* Hero */
+      .hero { min-height: 100svh; align-items: flex-end; }
+      .hero-image-wrap { width: 100%; }
+      .hero-content { padding: 0 24px 64px; max-width: 100%; }
+      .hero h1 { font-size: 44px; }
+      .hero-sub { font-size: 15px; }
+      .hero-actions { flex-direction: column; gap: 12px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .hero-scroll { display: none; }
+
+      /* Stats strip */
+      .about-strip .section-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 0 24px;
+      }
+      .stat-block .number { font-size: 36px; }
+
+      /* Section padding */
+      .section-inner { padding: 0 24px; }
+      h2.section-title { font-size: 32px; }
+      .section-lead { font-size: 15px; margin-bottom: 36px; }
+
+      /* Amenity grid */
+      .amenities { padding: 64px 0; }
+      .amenity-grid { grid-template-columns: 1fr; gap: 16px; }
+      .amenity-card { padding: 28px 24px; }
+
+      /* Stage */
+      .stage-section { padding: 64px 0; }
+      .stage-grid { grid-template-columns: 1fr; gap: 16px; }
+      .stage-card { padding: 24px; }
+
+      /* Day pass */
+      .daypass-section { padding: 64px 0; }
+      .daypass-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .pass-card { position: static; padding: 36px 28px; }
+      .pass-card .price { font-size: 32px !important; }
+
+      /* Sponsor tiers */
+      .sponsor-tiers { grid-template-columns: 1fr; max-width: 100%; padding: 0 24px; }
+      .sponsor-section .section-inner { padding: 0 24px; }
+
+      /* About strip */
+      .about-strip { padding: 48px 0; }
+
+      /* Company package section */
+      .section-inner div[style*="flex"] {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      /* Footer */
+      .footer-inner { padding: 0 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+      /* Buttons */
+      .btn { padding: 13px 20px; font-size: 10px; width: 100%; justify-content: center; text-align: center; }
+    }
+
+    /* Mobile menu button */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 300;
+    }
+    .mobile-menu-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    /* Mobile drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: rgba(20, 40, 28, 0.98);
+      backdrop-filter: blur(16px);
+      padding: 24px;
+      z-index: 190;
+      flex-direction: column;
+      gap: 4px;
+      border-bottom: 1px solid rgba(212,168,67,0.15);
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,240,230,0.7);
+      text-decoration: none;
+      padding: 14px 16px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .mobile-drawer a:hover { background: rgba(212,168,67,0.08); color: var(--gold); }
+    .mobile-drawer .drawer-cta {
+      background: var(--gold);
+      color: var(--forest) !important;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 36px; }
+      .about-strip .section-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .stat-block .number { font-size: 30px; }
+      h2.section-title { font-size: 28px; }
+    }
   </style>
 </head>
 <body>
@@ -785,14 +928,26 @@
     <div class="nav-brand">
       <div class="nav-logo">Camp EV— <span>// CORPORATE RETREAT &amp; REHABILITATION</span></div>
     </div>
-    <div class="nav-links">
-      <a href="#amenities">The Grounds</a>
-      <a href="#stage">The Stage</a>
-      <a href="#daypass">Day Pass</a>
-      <a href="#sponsors">Sponsors</a>
-      <a href="#daypass" class="btn-cta nav-cta btn">Join the Waitlist</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#amenities" onclick="closeMobileMenu()">The Grounds</a>
+      <a href="#stage" onclick="closeMobileMenu()">The Stage</a>
+      <a href="#daypass" onclick="closeMobileMenu()">Day Pass</a>
+      <a href="#sponsors" onclick="closeMobileMenu()">Sponsors</a>
+      <a href="#daypass" class="btn-cta nav-cta btn" onclick="closeMobileMenu()">Join the Waitlist</a>
     </div>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#amenities" onclick="closeMobileMenu()">The Grounds</a>
+    <a href="#stage" onclick="closeMobileMenu()">The Stage</a>
+    <a href="#daypass" onclick="closeMobileMenu()">Day Pass</a>
+    <a href="#sponsors" onclick="closeMobileMenu()">Sponsors</a>
+    <a href="#daypass" class="drawer-cta" onclick="closeMobileMenu()">Join the Waitlist →</a>
+  </div>
 
   <!-- ─── HERO ─── -->
   <section id="home" class="hero">
@@ -1110,5 +1265,23 @@
     </div>
   </footer>
 
+  <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      const btn = document.getElementById('mobile-menu-btn');
+      drawer.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-drawer').classList.remove('open');
+      document.getElementById('mobile-menu-btn').classList.remove('active');
+    }
+    // Close on outside click
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav') && !e.target.closest('.mobile-drawer')) {
+        closeMobileMenu();
+      }
+    });
+  </script>
 </body>
 </html>
