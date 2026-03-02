@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camp EV — Where EVM Teams Come to Unplug</title>
+  <title>Camp EV— Where Teams Come to Unplug & Rehabilitate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
@@ -150,26 +150,31 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212,168,67,0.15);
-      border: 1px solid rgba(212,168,67,0.4);
+      background: rgba(212,168,67,0.28);
+      border: 1.5px solid rgba(212,168,67,0.85);
       border-radius: 20px;
-      padding: 6px 16px;
+      padding: 8px 20px;
       margin-bottom: 24px;
+      box-shadow: 0 0 20px rgba(212,168,67,0.25), 0 2px 8px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
     }
 
     .hero-badge span {
       font-family: 'Space Mono', monospace;
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 2px;
-      color: var(--gold);
+      color: #FFE082;
       text-transform: uppercase;
+      font-weight: 700;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
 
     .hero-badge .dot {
-      width: 6px; height: 6px;
-      background: var(--gold);
+      width: 8px; height: 8px;
+      background: #FFE082;
       border-radius: 50%;
       animation: pulse 2.5s infinite;
+      box-shadow: 0 0 6px #FFE082;
     }
 
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -410,6 +415,25 @@
       font-family: 'Space Mono', monospace;
       font-size: 9px;
       letter-spacing: 1px;
+    }
+
+    .amenity-inquire {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--forest);
+      color: var(--cream);
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .amenity-inquire:hover {
+      background: var(--moss);
+      transform: translateY(-2px);
     }
 
     /* ─── STAGE ─── */
@@ -759,14 +783,14 @@
   <!-- ─── NAV ─── -->
   <nav id="top-nav">
     <div class="nav-brand">
-      <div class="nav-logo">Camp EV <span>// EVM RETREAT</span></div>
+      <div class="nav-logo">Camp EV— <span>// CORPORATE RETREAT &amp; REHABILITATION</span></div>
     </div>
     <div class="nav-links">
       <a href="#amenities">The Grounds</a>
       <a href="#stage">The Stage</a>
       <a href="#daypass">Day Pass</a>
       <a href="#sponsors">Sponsors</a>
-      <a href="#daypass" class="btn-cta nav-cta btn">Get Your Pass — $675</a>
+      <a href="#daypass" class="btn-cta nav-cta btn">Join the Waitlist</a>
     </div>
   </nav>
 
@@ -777,14 +801,14 @@
     <div class="hero-content">
       <div class="hero-badge">
         <div class="dot"></div>
-        <span>Summer 2026 · Registration Open</span>
+        <span>Summer 2026 · Now Accepting Applications</span>
       </div>
       <h1>Where EVM Teams<br />Come to <em>Unplug.</em></h1>
       <p class="hero-sub">
         The Ethereum ecosystem doesn't slow down — but you should. Camp EV is where the builders, founders, and teams pushing the needle in onchain tech come to reset, reconnect, and come back sharper.
       </p>
       <div class="hero-actions">
-        <a href="#daypass" class="btn btn-primary">🎟 Grab a Day Pass — $675</a>
+        <a href="#daypass" class="btn btn-primary">🎟 Join the Waitlist</a>
         <a href="#amenities" class="btn btn-outline">Explore the Grounds ↓</a>
       </div>
     </div>
@@ -808,9 +832,9 @@
         <div class="stat-desc">Builder teams, protocols, and infrastructure orgs.</div>
       </div>
       <div class="stat-block">
-        <div class="number">$675</div>
-        <div class="stat-label">Day Pass</div>
-        <div class="stat-desc">Access the grounds, stage, and side events for a day.</div>
+        <div class="number">Day</div>
+        <div class="stat-label">Passes Available</div>
+        <div class="stat-desc">Grounds, stage &amp; side events. Join the waitlist for pricing.</div>
       </div>
       <div class="stat-block">
         <div class="number">∞</div>
@@ -833,13 +857,15 @@
         <div class="amenity-card">
           <span class="amenity-icon">🏡</span>
           <h3>Private Cabins</h3>
-          <p>Full-team cabin blocks with fire pits, covered porches, and Wi-Fi strong enough to submit a PR — or ignore one.</p>
+          <p>Full-team cabin blocks with fire pits, covered porches, and Wi-Fi strong enough to submit a PR — or ignore one. Each package includes <strong>10 members for all 3 days</strong>, fully catered.</p>
           <span class="amenity-tag">FAMILY FRIENDLY</span>
+          <br/>
+          <a href="mailto:hello@campev.xyz?subject=Cabin Pre-Book Inquiry" class="amenity-inquire">Pre-Book for Your Company →</a>
         </div>
         <div class="amenity-card">
           <span class="amenity-icon">🏊</span>
           <h3>The Lake</h3>
-          <p>Canoes, kayaks, a floating dock, and the kind of swim that resets your nervous system. Cold plunge available for the masochists.</p>
+          <p>We're going all in. Jet skis, wakeboarding, paddleboards, kayaks, canoes, a floating dock, a rope swing, fishing, and a pontoon boat for sunset cruises. The kind of lake day people talk about for years.</p>
           <span class="amenity-tag">OPEN DAILY</span>
         </div>
         <div class="amenity-card">
@@ -853,6 +879,8 @@
           <h3>Campfire Commons</h3>
           <p>The real deals happen here. Communal fire pit, Adirondack chairs, and zero agenda. Bring a topic or just bring s'mores.</p>
           <span class="amenity-tag">NIGHTLY</span>
+          <br/>
+          <a href="mailto:hello@campev.xyz?subject=Company Retreat Inquiry" class="amenity-inquire">Inquire for Your Team →</a>
         </div>
         <div class="amenity-card">
           <span class="amenity-icon">🧘</span>
@@ -928,7 +956,7 @@
           <p class="label">// Day Pass</p>
           <h2 class="section-title">Can't Stay the Week?<br />Come for a Day.</h2>
           <p class="section-lead">
-            Day passes give you full access to the grounds, the stage, the lake, and the food — from sunrise to midnight. Bring your team or go solo.
+            Day passes give you full access to the grounds, the stage, the lake, and all the food — from sunrise to midnight. Solo or with your crew. Join the waitlist and we'll reach out with availability and pricing.
           </p>
 
           <div class="perks-list">
@@ -965,8 +993,8 @@
 
         <div>
           <div class="pass-card">
-            <div class="price">$675</div>
-            <div class="price-label">PER PERSON · DAY PASS</div>
+            <div class="price" style="font-size:42px; padding-top:8px;">Join the<br/>Waitlist</div>
+            <div class="price-label">DAY PASS · PRICING ON REQUEST</div>
             <ul class="pass-includes">
               <li><span class="check">✓</span> Full grounds access (sunrise to midnight)</li>
               <li><span class="check">✓</span> All meals & snacks</li>
@@ -976,11 +1004,27 @@
               <li><span class="check">✓</span> Morning wellness sessions</li>
               <li><span class="check">✓</span> Campfire commons access</li>
             </ul>
-            <a href="#" class="pass-btn">Secure Your Spot →</a>
+            <a href="mailto:hello@campev.xyz?subject=Day Pass Waitlist" class="pass-btn">Join the Waitlist →</a>
             <p class="pass-note">LIMITED SPOTS · FIRST COME FIRST SERVED</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── COMPANY PACKAGE ─── -->
+  <section style="background: var(--forest); padding: 72px 0;">
+    <div class="section-inner" style="text-align:center;">
+      <p class="label" style="color:var(--gold); opacity:0.8; display:block; margin-bottom:12px;">// Company Retreats</p>
+      <h2 class="section-title" style="color:var(--cream); margin:0 auto 16px;">The Full Experience.<br/>Built for Your Team.</h2>
+      <p style="font-size:17px; color:rgba(245,240,230,0.65); line-height:1.75; max-width:560px; margin:0 auto 40px;">
+        The Camp EV— company package is designed for teams of 10. Three full days on the lake — lodging, all meals, stage access, lake activities, evening programming, and town side events. Everything included. Nothing to coordinate.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="mailto:hello@campev.xyz?subject=Company Retreat Pre-Book" class="btn btn-primary">Pre-Book for Your Company →</a>
+        <a href="mailto:hello@campev.xyz?subject=Company Retreat Inquiry" class="btn btn-outline" style="border-color:rgba(245,240,230,0.3); color:var(--cream);">Request Info Pack</a>
+      </div>
+      <p style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:2px; color:rgba(245,240,230,0.25); margin-top:20px;">10 MEMBERS · 3 DAYS · ALL INCLUSIVE</p>
     </div>
   </section>
 
@@ -1042,7 +1086,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="logo">Camp EV</div>
-          <p>A lakeside retreat for EVM teams. Unplug, reconnect, and remember why you're building.</p>
+          <p>Corporate retreat &amp; rehabilitation by the lake. Unplug, reconnect, and come back sharper.</p>
         </div>
         <div class="footer-col">
           <h4>Navigate</h4>
