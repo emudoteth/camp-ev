@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#1E3A28" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏕️</text></svg>" />
   <title>Camp EV— Where Teams Come to Unplug & Rehabilitate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -1061,7 +1062,7 @@
       <a href="#ski" onclick="closeMobileMenu()">⛷️ Winter 2027</a>
       <a href="#india" onclick="closeMobileMenu()">🇮🇳 India</a>
       <a href="#sponsors" onclick="closeMobileMenu()">Sponsors</a>
-      <a href="#daypass" class="btn-cta nav-cta btn" onclick="closeMobileMenu()">Join the Waitlist</a>
+      <a href="#daypass" class="btn-cta nav-cta btn" onclick="closeMobileMenu()" style="text-align:center; justify-content:center;">Join the Waitlist</a>
     </div>
     <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1233,6 +1234,73 @@
     </div>
   </section>
 
+  <!-- ─── COMPANY PACKAGE ─── -->
+  <section style="background: var(--forest); padding: 72px 0;">
+    <div class="section-inner" style="text-align:center;">
+      <p class="label" style="color:var(--gold); opacity:0.8; display:block; margin-bottom:12px;">// Company Retreats</p>
+      <h2 class="section-title" style="color:var(--cream); margin:0 auto 16px;">The Full Experience.<br/>Built for Your Team.</h2>
+      <p style="font-size:17px; color:rgba(245,240,230,0.65); line-height:1.75; max-width:560px; margin:0 auto 40px;">
+        The Camp EV— company package is designed for teams of 10. Three full days on the lake — lodging, all meals, stage access, lake activities, evening programming, and town side events. Everything included. Nothing to coordinate.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="mailto:campevm@gmail.com?subject=Company Retreat Pre-Book" class="btn btn-primary">Pre-Book for Your Company →</a>
+        <a href="mailto:campevm@gmail.com?subject=Company Retreat Inquiry" class="btn btn-outline" style="border-color:rgba(245,240,230,0.3); color:var(--cream);">Request Info Pack</a>
+      </div>
+      <p style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:2px; color:rgba(245,240,230,0.25); margin-top:20px;">10 MEMBERS · 3 DAYS · ALL INCLUSIVE</p>
+    </div>
+  </section>
+
+  <!-- ─── SPONSORS ─── -->
+  <section id="sponsors" class="sponsor-section">
+    <div class="section-inner">
+      <p class="label">// Partner With Us</p>
+      <h2 class="section-title" style="text-align:center">Be Part of the Retreat</h2>
+      <p class="section-lead" style="max-width:540px">
+        Put your brand in the middle of EVM's most focused, influential builders — in an environment where the conversations actually go somewhere.
+      </p>
+
+      <div class="sponsor-tiers">
+        <div class="tier-card">
+          <span class="tier-icon">🌲</span>
+          <div class="tier-name">Trailblazer</div>
+          <div class="tier-price">$15,000</div>
+          <ul class="tier-perks">
+            <li>2 person all inclusive</li>
+            <li>Logo on event materials</li>
+            <li>Campfire sponsorship</li>
+            <li>Social mentions</li>
+          </ul>
+        </div>
+        <div class="tier-card featured">
+          <span class="tier-icon">🏕️</span>
+          <div class="tier-name">Cabin Sponsor</div>
+          <div class="tier-price">$50,000</div>
+          <ul class="tier-perks">
+            <li>10 person all inclusive</li>
+            <li>Named cabin block</li>
+            <li>Stage speaking slot</li>
+            <li>Branded side event</li>
+            <li>Exclusive dinner session</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <span class="tier-icon">🌅</span>
+          <div class="tier-name">Title Partner</div>
+          <div class="tier-price">$65,000</div>
+          <ul class="tier-perks">
+            <li>10 person all inclusive</li>
+            <li>Top billing in all comms</li>
+            <li>Keynote speaking slot</li>
+            <li>Custom activation area</li>
+            <li>Exclusive dinner session</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="mailto:campevm@gmail.com" class="btn btn-primary">Get Sponsorship Info →</a>
+    </div>
+  </section>
+
   <!-- ─── DAY PASS ─── -->
   <section id="daypass" class="daypass-section">
     <div class="section-inner">
@@ -1294,74 +1362,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ─── COMPANY PACKAGE ─── -->
-  <section style="background: var(--forest); padding: 72px 0;">
-    <div class="section-inner" style="text-align:center;">
-      <p class="label" style="color:var(--gold); opacity:0.8; display:block; margin-bottom:12px;">// Company Retreats</p>
-      <h2 class="section-title" style="color:var(--cream); margin:0 auto 16px;">The Full Experience.<br/>Built for Your Team.</h2>
-      <p style="font-size:17px; color:rgba(245,240,230,0.65); line-height:1.75; max-width:560px; margin:0 auto 40px;">
-        The Camp EV— company package is designed for teams of 10. Three full days on the lake — lodging, all meals, stage access, lake activities, evening programming, and town side events. Everything included. Nothing to coordinate.
-      </p>
-      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a href="mailto:campevm@gmail.com?subject=Company Retreat Pre-Book" class="btn btn-primary">Pre-Book for Your Company →</a>
-        <a href="mailto:campevm@gmail.com?subject=Company Retreat Inquiry" class="btn btn-outline" style="border-color:rgba(245,240,230,0.3); color:var(--cream);">Request Info Pack</a>
-      </div>
-      <p style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:2px; color:rgba(245,240,230,0.25); margin-top:20px;">10 MEMBERS · 3 DAYS · ALL INCLUSIVE</p>
-    </div>
-  </section>
-
-  <!-- ─── SPONSORS ─── -->
-  <section id="sponsors" class="sponsor-section">
-    <div class="section-inner">
-      <p class="label">// Partner With Us</p>
-      <h2 class="section-title" style="text-align:center">Be Part of the Retreat</h2>
-      <p class="section-lead" style="max-width:540px">
-        Put your brand in the middle of EVM's most focused, influential builders — in an environment where the conversations actually go somewhere.
-      </p>
-
-      <div class="sponsor-tiers">
-        <div class="tier-card">
-          <span class="tier-icon">🌲</span>
-          <div class="tier-name">Trailblazer</div>
-          <div class="tier-price">On Request</div>
-          <ul class="tier-perks">
-            <li>Logo on event materials</li>
-            <li>2 day passes included</li>
-            <li>Campfire sponsorship</li>
-            <li>Social mentions</li>
-          </ul>
-        </div>
-        <div class="tier-card featured">
-          <span class="tier-icon">🏕️</span>
-          <div class="tier-name">Cabin Sponsor</div>
-          <div class="tier-price">On Request</div>
-          <ul class="tier-perks">
-            <li>Named cabin block</li>
-            <li>5 day passes included</li>
-            <li>Stage speaking slot</li>
-            <li>Branded side event</li>
-            <li>Exclusive dinner session</li>
-          </ul>
-        </div>
-        <div class="tier-card">
-          <span class="tier-icon">🌅</span>
-          <div class="tier-name">Title Partner</div>
-          <div class="tier-price">On Request</div>
-          <ul class="tier-perks">
-            <li>Top billing in all comms</li>
-            <li>10 day passes included</li>
-            <li>Keynote speaking slot</li>
-            <li>Custom activation area</li>
-            <li>Exclusive dinner session</li>
-            <li>Year-round partnership</li>
-          </ul>
-        </div>
-      </div>
-
-      <a href="mailto:campevm@gmail.com" class="btn btn-primary">Get Sponsorship Info →</a>
     </div>
   </section>
 
